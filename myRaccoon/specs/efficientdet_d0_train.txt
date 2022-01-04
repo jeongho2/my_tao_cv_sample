@@ -1,5 +1,5 @@
 training_config {
-  # checkpoint: "/workspace/tao-experiments/myRaccoon/pretrained_efficientdet_vefficientnet_b0/efficientnet_b0.hdf5"
+  # checkpoint: "/workspace/tao-experiments/my_tao_cv_sample/myRaccoon/pretrained_efficientdet_vefficientnet_b0/efficientnet_b0.hdf5"
   train_batch_size: 16
   iterations_per_loop: 10
   checkpoint_period: 2

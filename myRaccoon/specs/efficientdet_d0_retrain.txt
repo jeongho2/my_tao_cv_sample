@@ -1,6 +1,6 @@
 training_config {
-  checkpoint: "/workspace/tao-experiments/myRaccoon/experiment_dir_pruned/model.tlt"
-  pruned_model_path: "/workspace/tao-experiments/myRaccoon/experiment_dir_pruned/model.tlt"
+  checkpoint: "/workspace/tao-experiments/my_tao_cv_sample/myRaccoon/experiment_dir_pruned/model.tlt"
+  pruned_model_path: "/workspace/tao-experiments/my_tao_cv_sample/myRaccoon/experiment_dir_pruned/model.tlt"
   train_batch_size: 16
   iterations_per_loop: 10
   checkpoint_period: 2
