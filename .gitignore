@@ -7,3 +7,6 @@ myRaccoon*/experiment*
 myRaccoon*/export*
 myRaccoon*/pretrained*
 myRaccoon*/trt_annotated*
+convertDataset/annotations
+convertDataset/images
+convertDataset/labels
