@@ -2,9 +2,7 @@ inferencer_config{
   # Defining input node of the model
   # defining target class names for the experiment.
   # Note: This must be mentioned in order of the networks classes.
-  target_classes: "car"
-  target_classes: "cyclist"
-  target_classes: "pedestrian"
+  target_classes: "raccoon"
   # Inference dimensions.
   image_width: 1248
   image_height: 384
@@ -14,7 +12,7 @@ inferencer_config{
   gpu_index: 0
   # model handler config
   tensorrt_config{
-    trt_engine: "/workspace/tao-experiments/detectnet_v2/experiment_dir_final/resnet18_detector_qat.trt.int8"
+    trt_engine: "/workspace/tao-experiments/my_tao_cv_sample/myRaccoonWithDetectnetV2/experiment_dir_final/resnet18_detector_qat.trt.int8"
   }
 }
 bbox_handler_config{
@@ -22,50 +20,10 @@ bbox_handler_config{
   disable_overlay: false
   overlay_linewidth: 2
   classwise_bbox_handler_config{
-    key:"car"
+    key:"raccoon"
     value: {
       confidence_model: "aggregate_cov"
-      output_map: "car"
-      bbox_color{
-        R: 0
-        G: 255
-        B: 0
-      }
-      clustering_config{
-        clustering_algorithm: DBSCAN
-        coverage_threshold: 0.005
-        dbscan_eps: 0.3
-        dbscan_min_samples: 0.05
-        dbscan_confidence_threshold: 0.9
-        minimum_bounding_box_height: 4
-      }
-    }
-  }
-  classwise_bbox_handler_config{
-    key:"cyclist"
-    value: {
-      confidence_model: "aggregate_cov"
-      output_map: "cyclist"
-      bbox_color{
-        R: 0
-        G: 255
-        B: 255
-      }
-      clustering_config{
-        clustering_algorithm: DBSCAN
-        coverage_threshold: 0.005
-        dbscan_eps: 0.3
-        dbscan_min_samples: 0.05
-        dbscan_confidence_threshold: 0.9
-        minimum_bounding_box_height: 4
-      }
-    }
-  }
-  classwise_bbox_handler_config{
-    key:"pedestrian"
-    value: {
-      confidence_model: "aggregate_cov"
-      output_map: "pedestrian"
+      output_map: "raccoon"
       bbox_color{
         R: 255
         G: 0
