@@ -42,22 +42,14 @@ def coco2kitti(catNms, annFile):
             img_fname = coco.imgs[img]['file_name']
             # open text file
             with open('./labels/' + os.path.splitext(img_fname)[0] + '.txt','w') as label_file:
-            # with open('./labels/' + img_fname.split('.')[0] + '.txt','w') as label_file:
                 print(img_fname)
                 anns = coco.loadAnns(annIds)
                 for a in anns:
-                    print("a in anns !!!!!!")
                     bbox = a['bbox']
-                    print("before bbox @@@@@@")
-                    print(bbox)
                     # Convert COCO bbox coords to Kitti ones
                     bbox = [bbox[0], bbox[1], bbox[2] + bbox[0], bbox[3] + bbox[1]]
                     bbox = [str(b) for b in bbox]
-                    print("after bbox @@@@@@")
-                    print(bbox)
                     catname = cat_idx[a['category_id']]
-                    print("catname : ")
-                    print(catname)
                     # Format line in label file
                     # Note: all whitespace will be removed from class names
                     out_str = [catname.replace(" ","")
@@ -69,16 +61,10 @@ def coco2kitti(catNms, annFile):
 
 if __name__ == '__main__':
 
-    # These settings assume this script is in the annotations directory
-    ANNOTATIONS = 'annotations'
-    COCO_RACCOON_API = 'PythonAPI'
-    INSTANCES_SET = 'instances_{}.json'
+    # These settings assume this script is in data directory
     dataDir = '.'
     dataType = 'train'
-    # annFile = '%s/annotations/instances_%s.json' % (dataDir, dataType)
     annFile = '%s/annotations/%s.json' % (dataDir, dataType)
-
-    print(annFile)
 
     # If this list is populated then label files will only be produced
     # for images containing the listed classes and only the listed classes
