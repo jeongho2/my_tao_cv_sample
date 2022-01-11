@@ -9,6 +9,7 @@ myRaccoon*/export*
 myRaccoon*/pretrained*
 myRaccoon*/trt_annotated*
 myRaccoon*/tlt_*
+myRaccoon*/etlt_*
 convertDataset/annotations
 convertDataset/images
 convertDataset/labels
