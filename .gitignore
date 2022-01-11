@@ -1,12 +1,14 @@
 .vs
 .github
 .vscode
+wget-log
 myRaccoon*/.ipynb_checkpoints
 myRaccoon*/annotated_images
 myRaccoon*/experiment*
 myRaccoon*/export*
 myRaccoon*/pretrained*
 myRaccoon*/trt_annotated*
+myRaccoon*/tlt_*
 convertDataset/annotations
 convertDataset/images
 convertDataset/labels
