@@ -1,0 +1,15 @@
+kitti_config {
+  root_directory_path: "/workspace/tao-experiments/myData/MOTDet/train"
+  image_dir_name: "image"
+  label_dir_name: "labels"
+  image_extension: ".jpg"
+  partition_mode: "random"
+  num_partitions: 2
+  val_split: 0
+  num_shards: 10
+}
+image_directory_path: "/workspace/tao-experiments/myData/MOTDet/train/image"
+target_class_mapping {
+    key: "person"
+    value: "person"
+}
