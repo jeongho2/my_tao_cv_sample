@@ -12,6 +12,9 @@ my*/tlt_*
 my*/etlt_*
 my*/*images*
 my*/*labels*
-convertDataset/annotations
-convertDataset/images
-convertDataset/labels
+convertDataset/coco2kitti/annotations
+convertDataset/coco2kitti/images
+convertDataset/coco2kitti/labels
+convertDataset/mot/train
+convertDataset/mot/val
+convertDataset/mot/labels
