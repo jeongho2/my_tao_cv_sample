@@ -45,32 +45,16 @@ augmentation_config {
 }
 dataset_config {
   data_sources: {
-      label_directory_path: "/workspace/tao-experiments/data/training/label_2"
-      image_directory_path: "/workspace/tao-experiments/data/training/image_2"
+      label_directory_path: "/workspace/tao-experiments/myData/MOTDet/train/labels"
+      image_directory_path: "/workspace/tao-experiments/myData/MOTDet/train/image"
   }
   include_difficult_in_training: true
   target_class_mapping {
-      key: "car"
-      value: "car"
-  }
-  target_class_mapping {
-      key: "pedestrian"
-      value: "pedestrian"
-  }
-  target_class_mapping {
-      key: "cyclist"
-      value: "cyclist"
-  }
-  target_class_mapping {
-      key: "van"
-      value: "car"
-  }
-  target_class_mapping {
-      key: "person_sitting"
-      value: "pedestrian"
+      key: "person"
+      value: "person"
   }
   validation_data_sources: {
-      label_directory_path: "/workspace/tao-experiments/data/val/label"
-      image_directory_path: "/workspace/tao-experiments/data/val/image"
+      label_directory_path: "/workspace/tao-experiments/myData/MOTDet/val/labels"
+      image_directory_path: "/workspace/tao-experiments/myData/MOTDet/val/image"
   }
 }

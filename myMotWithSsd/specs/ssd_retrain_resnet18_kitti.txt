@@ -44,31 +44,15 @@ augmentation_config {
 }
 dataset_config {
   data_sources: {
-    tfrecords_path: "/workspace/tao-experiments/data/tfrecords/kitti_train*"
+    tfrecords_path: "/workspace/tao-experiments/myData/MOTDet/tfrecords/kitti_train*"
   }
   include_difficult_in_training: true
   target_class_mapping {
-      key: "car"
-      value: "car"
-  }
-  target_class_mapping {
-      key: "pedestrian"
-      value: "pedestrian"
-  }
-  target_class_mapping {
-      key: "cyclist"
-      value: "cyclist"
-  }
-  target_class_mapping {
-      key: "van"
-      value: "car"
-  }
-  target_class_mapping {
-      key: "person_sitting"
-      value: "pedestrian"
+      key: "person"
+      value: "person"
   }
   validation_data_sources: {
-      label_directory_path: "/workspace/tao-experiments/data/val/label"
-      image_directory_path: "/workspace/tao-experiments/data/val/image"
+      label_directory_path: "/workspace/tao-experiments/myData/MOTDet/val/labels"
+      image_directory_path: "/workspace/tao-experiments/myData/MOTDet/val/image"
   }
 }
