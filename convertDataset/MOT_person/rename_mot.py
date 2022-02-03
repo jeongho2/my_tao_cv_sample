@@ -1,3 +1,8 @@
+""" mot_rename.py
+
+MOTDet Dir - 여러 MOT Dir을 Train / Val 
+묶음으로 학습시키기 위해 Dir 별로 중복된 이름을 고유한 이름을 가지도록 변경
+"""
 import os
 
 mot_data_path = '/home/demo/Desktop/workspace/cv_samples_v1.3.0/myData/MOTDet'
@@ -24,5 +29,4 @@ for dir in dir_list:
                     print("success : " + old_name + " -> " + new_name)
                 except:
                     print("fail : " + old_name + " -> " + new_name)
-                    print("=========files already renamed number(1.jpg) to new_name(hood_T_1.jpg)===========")
                     break

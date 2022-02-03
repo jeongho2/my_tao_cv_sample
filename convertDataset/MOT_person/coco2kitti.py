@@ -1,4 +1,4 @@
-"""coco2kitti.py: Convert MS COCO annotation files to 
+""" coco2kitti.py: Convert MS COCO annotation files to 
             bounding box label files in Kitti format 
             to provide Kitti data format in training 
             with TAO toolkit.
@@ -65,8 +65,8 @@ def coco2kitti(catNms, annFile):
 if __name__ == '__main__':
 
     # These settings assume this script is in data directory
-    dataType = 'train'
-    # dataType = 'val'
+    # dataType = 'train'
+    dataType = 'val'
 
     # annFile = '%s/annotations/%s.json' % (dataDir, dataType)
     annFile = 'annotations/%s.json' % (dataType)

@@ -1,3 +1,17 @@
+""" mot2coco.py
+
+# MOT Format
+Notion - Dataset 확보 - Annotation 참고
+https://www.notion.so/snuailab/Dataset-689532ebc2f24b8f93195b380b02ea23#27e439d05b95432290febebcc5ba3a89
+
+# TAO COCO Format
+"categories" : [{id, name, supercategory}],
+"images" : [{id, license, file_name, height, width, date_captured}],
+"annotations" : [{id, image_id, category_id, bbox:[], area, segmetation, iscrowd()}]
+
+__author__ = "Jeongho Kim"
+"""
+
 import os
 import json
 import cv2
@@ -5,12 +19,7 @@ import numpy as np
 import configparser
 import math
 
-"""
-   MOT : Frame_number Identity_number 
 
-
-   COCO : bbox" : [x,y,width,height], 
-"""
 def convert2coco(dir_list, val=False):
     categories = [{'id': 0, 'name': 'person', "supercategory": "none"}]
     images = []
@@ -37,8 +46,8 @@ def convert2coco(dir_list, val=False):
         img_list = np.unique(np.array(gt)[:,0]).tolist()
         img_id = 0
 
-        if val:
-            img_list = np.random.choice(img_list, int(len(img_list)/10)).tolist()
+        # if val:
+            # img_list = np.random.choice(img_list, int(len(img_list)/10)).tolist()
         for im in img_list:
             id = img_id + img_id_offset
             file_name = f'{im:06d}.jpg'
@@ -54,9 +63,8 @@ def convert2coco(dir_list, val=False):
                 }
             )
             img_id += 1
-
+        
         for ann in gt:
-            print('annn')
             # x, y, width, height
             bbox = ann[2:6]
 
@@ -74,10 +82,11 @@ def convert2coco(dir_list, val=False):
             if (bbox[1] + bbox[3]) > h: bbox[3] = h - bbox[1]
 
             if ann[7] not in cls2cat or ann[-1] < 0.5: 
-                print('not cls2cat')
+                # print('not cls2cat')
                 continue #
+            
             if bbox[3]/bbox[2] < 0.5 or bbox[3]/bbox[2] > 6: 
-                print('not 0.5 6')
+                # print('not 0.5 6')
                 continue # 6 가로 세로 비율
 
             if ann[0] in img_list:
